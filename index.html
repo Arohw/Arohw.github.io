@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Personal Page</title>
+  <meta name="description" content="A simple, well-structured personal page." />
+  <style>
+    :root {
+      --bg: #0f172a;      /* slate-900 */
+      --panel: #111827;   /* gray-900 */
+      --text: #e5e7eb;    /* gray-200 */
+      --muted: #94a3b8;   /* slate-400 */
+      --brand: #10b981;   /* emerald-500 */
+      --link: #60a5fa;    /* blue-400 */
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--text); background: radial-gradient(1200px 600px at 50% -10%, #1f2937, var(--bg));
+      line-height: 1.6;
+    }
+    .wrap { max-width: 880px; margin: 0 auto; padding: 24px; }
+    header { padding: 32px 0 8px; }
+    h1 { margin: 0 0 8px; font-size: clamp(28px, 5vw, 40px); letter-spacing: .5px; }
+    .tagline { color: var(--muted); margin: 0 0 12px; }
+    nav { display: flex; gap: 16px; flex-wrap: wrap; margin: 12px 0 24px; }
+    nav a {
+      text-decoration: none; color: var(--text); padding: 8px 12px; border-radius: 10px;
+      background: #0b1220; border: 1px solid #1f2937;
+    }
+    nav a:hover { outline: 2px solid var(--brand); }
+    section { background: linear-gradient(180deg, #0b1220, var(--panel));
+      border: 1px solid #1f2937; border-radius: 16px; padding: 20px; margin: 16px 0; }
+    section h2 { margin-top: 0; font-size: 22px; }
+    .grid { display: grid; gap: 14px; }
+    @media (min-width: 720px) { .grid.cols-2 { grid-template-columns: 1fr 1fr; } }
+    .card { background: #0b1220; border: 1px solid #1f2937; border-radius: 14px; padding: 14px; }
+    .kicker { text-transform: uppercase; letter-spacing: .12em; color: var(--muted); font-size: 12px; }
+    a.inline { color: var(--link); }
+    footer { color: var(--muted); text-align: center; padding: 28px 0 60px; }
+    .cta {
+      display: inline-block; margin-top: 10px; background: var(--brand); color: #052e27;
+      padding: 10px 14px; border-radius: 10px; text-decoration: none; font-weight: 600;
+    }
+    img.avatar { width: 92px; height: 92px; border-radius: 50%; object-fit: cover; border: 2px solid #1f2937; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Hi, I’m <span style="color: var(--brand)">Luke!</span>.</h1>
+      <p class="tagline">CS student • Security enthusiast • Building cool stuff on the web</p>
+      <nav aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#coursework">Coursework</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section id="about" aria-labelledby="about-h">
+      <h2 id="about-h">About me</h2>
+      <div class="grid cols-2">
+        <div>
+          <p>
+            I’m a computer science student interested in cybersecurity, web apps, and embedded systems.
+            This page is hosted with <a class="inline" href="https://pages.github.com/">GitHub Pages</a>.
+          </p>
+          <p>
+            Outside of class I’m working on a budgeting app and an automated irrigation system.
+            I enjoy lifting, movies, and learning a bunch of new stuff!.
+          </p>
+        </div>
+        <div class="card">
+          <div class="kicker">Quick facts</div>
+          <ul>
+            <li>Location: North Carolina, USA</li>
+            <li>Languages: JS, Python, SQL</li>
+            <li>Interests: Security, ML privacy, IoT</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" aria-labelledby="proj-h">
+      <h2 id="proj-h">Projects</h2>
+      <div class="grid cols-2">
+        <article class="card">
+          <h3>PennyTracker</h3>
+          <p>Personal budgeting web app with income/expense tracking, charts, and PDF reports.</p>
+          <a class="inline" href="#" aria-label="PennyTracker source (placeholder)">Source</a>
+        </article>
+        <article class="card">
+          <h3>Irrigation Controller</h3>
+          <p>Raspberry Pi Pico W, LCD + keypad. Staged flood/soak cycles with RTC scheduling.</p>
+          <a class="inline" href="#" aria-label="Irrigation repo (placeholder)">Source</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="coursework" aria-labelledby="cw-h">
+      <h2 id="cw-h">Recent coursework</h2>
+      <ul>
+        <li>Computer Security (crypto, forensics)</li>
+        <li>Databases (ERD, SQL, normalization)</li>
+        <li>Calculus II & Linear Algebra</li>
+      </ul>
+    </section>
+
+    <section id="contact" aria-labelledby="ct-h">
+      <h2 id="ct-h">Contact</h2>
+      <p>Email: <a class="inline" href="mailto:lr0041@bravemail.uncp.edu">Luke Rohweder</a></p>
+      <a class="cta" href="mailto:lr0041@bravemail.uncp.edu">Say hello</a>
+    </section>
+
+    <footer>
+      <small>© <span id="y"></span> Your Name · Built with GitHub Pages</small>
+    </footer>
+  </div>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
